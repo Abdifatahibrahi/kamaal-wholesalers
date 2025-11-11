@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kamaal Wholesalers - Authentic Kenyan Food & Goods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --primary-light: #4caf50;
+            --accent: #ff9800;
+            --kenya-red: #ce1126;
+            --kenya-green: #006600;
+            --kenya-black: #000000;
+            --kenya-white: #ffffff;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: var(--kenya-white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #f57c00;
+        }
+
+        .kenya-flag {
+            display: inline-block;
+            width: 20px;
+            height: 12px;
+            background: linear-gradient(to bottom, 
+                var(--kenya-black) 0%, var(--kenya-black) 33%, 
+                var(--kenya-red) 33%, var(--kenya-red) 66%, 
+                var(--kenya-green) 66%, var(--kenya-green) 100%);
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--kenya-white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: var(--kenya-white);
+            text-align: center;
+            padding: 180px 0 120px;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Categories Section */
+        .categories {
+            background-color: var(--kenya-white);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--kenya-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-icon {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--kenya-white);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .category-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 125, 50, 0.7);
+        }
+
+        .category-icon i {
+            z-index: 1;
+        }
+
+        .category-content {
+            padding: 25px 20px;
+        }
+
+        .category-content h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Featured Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--kenya-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 15px;
+            color: var(--kenya-white);
+            position: relative;
+        }
+
+        .product-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        .product-tag {
+            background-color: var(--accent);
+            color: var(--kenya-white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Kenyan Specialties */
+        .specialties {
+            background-color: var(--bg-light);
+        }
+
+        .specialty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .specialty-card {
+            background-color: var(--kenya-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .specialty-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            color: var(--kenya-white);
+            position: relative;
+        }
+
+        .specialty-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        .specialty-content {
+            padding: 25px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--kenya-white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            text-align: left;
+        }
+
+        .about-text h2:after {
+            left: 0;
+            transform: none;
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--bg-light);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: var(--kenya-white);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--kenya-white);
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--kenya-white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 20px;
+        }
+
+        .contact-form {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--kenya-white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--kenya-white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--kenya-white);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--kenya-white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text h2 {
+                text-align: center;
+            }
+            
+            .about-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--kenya-white);
+                box-shadow: var(--shadow);
+                padding: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>kamaal <span>Wholesalers</span></h1>
+                <span class="kenya-flag"></span>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#specialties">Kenyan Specialties</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Authentic Kenyan Food & Goods</h1>
+            <p>kamaal Wholesalers offers the finest selection of authentic Kenyan food products at competitive wholesale prices. Serving businesses and retailers with quality since 2005.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn">View Products</a>
+                <a href="#contact" class="btn btn-accent">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Our Product Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon" style="background-image: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg')">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Fresh Produce</h3>
+                        <p>Fruits, vegetables, and fresh herbs sourced directly from Kenyan farms.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-image: url('https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg')">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Spices & Seasonings</h3>
+                        <p>Authentic Kenyan spices and seasonings for traditional cooking.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-image: url('https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg')">
+                        <i class="fas fa-wheat-alt"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Grains & Cereals</h3>
+                        <p>Maize, millet, sorghum, and other staple Kenyan grains.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-image: url('https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg')">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Kenyan Beverages</h3>
+                        <p>Premium Kenyan coffee, tea, and traditional beverages.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-image: url('https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg')">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Bakery & Flour</h3>
+                        <p>Wheat flour, baking ingredients, and traditional baked goods.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-image: url('https://images.pexels.com/photos/264537/pexels-photo-264537.jpeg')">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Packaged Goods</h3>
+                        <p>Canned foods, snacks, and other packaged Kenyan products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg')">
+                        <span class="product-tag">Best Seller</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Maize Flour for Ugali</h3>
+                        <p>Premium quality maize flour for authentic Ugali preparation, finely ground for perfect texture.</p>
+                        <div class="product-price">KSh 1,250 / 10kg Bag</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn">Details</a>
+                            <a href="#contact" class="btn btn-accent">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg')">
+                        <span class="product-tag">Fresh</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Fresh Sukuma Wiki</h3>
+                        <p>Fresh, nutrient-rich kale, a staple in Kenyan households. Perfect for traditional dishes.</p>
+                        <div class="product-price">KSh 450 / Bunch</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn">Details</a>
+                            <a href="#contact" class="btn btn-accent">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg')">
+                        <span class="product-tag">Premium</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Kenyan AA Coffee</h3>
+                        <p>Premium Arabica coffee beans from the highlands of Kenya. Rich flavor and aroma.</p>
+                        <div class="product-price">KSh 2,800 / kg</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn">Details</a>
+                            <a href="#contact" class="btn btn-accent">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/2092897/pexels-photo-2092897.jpeg')">
+                        <span class="product-tag">Popular</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Basmati Rice</h3>
+                        <p>High-quality long-grain Basmati rice, perfect for pilau and other Kenyan rice dishes.</p>
+                        <div class="product-price">KSh 1,850 / 10kg Bag</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn">Details</a>
+                            <a href="#contact" class="btn btn-accent">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kenyan Specialties -->
+    <section class="specialties" id="specialties">
+        <div class="container">
+            <h2>Kenyan Specialties</h2>
+            <div class="specialty-grid">
+                <div class="specialty-card">
+                    <div class="specialty-img" style="background-image: url('ugali_afya.jpeg')">
+                        <h3>Ugali & Sukuma Wiki</h3>
+                    </div>
+                    <div class="specialty-content">
+                        <p>We source authentic ingredients for preparing Kenya's most beloved dish - Ugali served with Sukuma Wiki. Our maize flour produces the perfect consistency for this staple food.</p>
+                    </div>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-img" style="background-image: url('rice.jpeg')">
+                        <h3>Pilau & Rice Dishes</h3>
+                    </div>
+                    <div class="specialty-content">
+                        <p>Our premium Basmati rice and authentic spices are perfect for making traditional Kenyan pilau and other rice dishes that are central to celebrations and family meals.</p>
+                    </div>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-img" style="background-image: url('pasta.jpeg')">
+                        <h3>Traditional Spices</h3>
+                    </div>
+                    <div class="specialty-content">
+                        <p>We offer a complete range of traditional Kenyan spices and seasonings to help you create authentic flavors in your dishes, from pilau masala to curry powders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About kamaal Wholesalers</h2>
+                    <p>Established in 2005, kamaal Wholesalers has been a trusted supplier of authentic Kenyan food products to retailers, restaurants, and businesses across the region.</p>
+                    <p>We pride ourselves on our commitment to quality, competitive pricing, and exceptional customer service. Our extensive network of Kenyan suppliers ensures we can meet the demands of any business, large or small.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Quality Assurance</h3>
+                                <p>All our products undergo strict quality checks to ensure they meet the highest standards of Kenyan cuisine.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <h3>Fast Delivery</h3>
+                                <p>We offer reliable and timely delivery services to keep your business running smoothly.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h3>Supporting Local</h3>
+                                <p>We work directly with Kenyan farmers and producers to support local communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" style="background-image: url('4.png')"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"kamaal Wholesalers has been our primary supplier for over 5 years. Their authentic Kenyan products and reliable delivery have helped our restaurant maintain its reputation for excellent traditional cuisine."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JK</div>
+                        <div>
+                            <h4>Joseph Kariuki</h4>
+                            <p>Owner, Nyama Choma Restaurant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"As a small grocery store owner, I appreciate the authentic Kenyan products and competitive pricing that kamaal offers. They understand the needs of small businesses and the importance of traditional ingredients."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">WM</div>
+                        <div>
+                            <h4>Wanjiku Mwangi</h4>
+                            <p>Owner, FreshMart Grocery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to stock up on authentic Kenyan products? Contact us today for pricing, availability, or any questions you may have.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Biashara Street, Nairobi, Kenya</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+254 700 123 456</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@kamaalwholesalers.co.ke</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>kamaal Wholesalers</h3>
+                    <p>Your trusted partner for authentic Kenyan food products and goods at wholesale prices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#specialties">Kenyan Specialties</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#">Fresh Produce</a></li>
+                        <li><a href="#">Spices & Seasonings</a></li>
+                        <li><a href="#">Grains & Cereals</a></li>
+                        <li><a href="#">Kenyan Beverages</a></li>
+                        <li><a href="#">Bakery & Flour</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Biashara Street, Nairobi</li>
+                        <li><i class="fas fa-phone"></i> +254 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@kamaalwholesalers.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 kamaal Wholesalers. All Rights Reserved. Proudly Kenyan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Asante sana! Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
